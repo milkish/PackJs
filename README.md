@@ -15,7 +15,7 @@ _________________________________________________________________________
 
 # Why
 
-  Finding all and downloading all the JS libraries I need when starting a new project is a pain.
+  Finding and downloading all the JS libraries I need when starting a new project is a pain.
 
 # Where
   
