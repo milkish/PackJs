@@ -27,3 +27,30 @@ task :get_new_js_files do
     `wget #{file_url} -O #{outfile}` unless File.exists? outfile
   end
 end
+
+task :setup do
+  dir = "secrets"
+  file = "amazon.yaml"
+
+  amayaml = <<HERE
+production:
+  secret_access_key: 
+  access_key_id: 
+  bucket_name: 
+
+
+development:
+  secret_access_key: 
+  access_key_id: 
+  bucket_name: 
+HERE
+
+  Dir.mkdir dir unless File.directory? dir
+  raise "you already have the config files." if File.exists? "#{dir}/#{file}"
+
+  File.open "#{dir}/#{file}", "w" do |f|
+    f.write amayaml
+  end
+
+  puts "Fill in your AWS credentials in #{dir}/#{file}"
+end
