@@ -1,0 +1,64 @@
+jquery:
+  name: jQuery
+  homepage: http://jquery.com/
+  versions:
+    1.7.1:
+      min: http://code.jquery.com/jquery-1.7.1.min.js
+    1.7.0:
+      min: http://code.jquery.com/jquery-1.7.min.js
+
+backbone:
+  name: Backbone.js
+  homepage: http://documentcloud.github.com/backbone
+  versions:
+    0.9.1:
+      min: http://documentcloud.github.com/backbone/backbone-min.js
+
+underscore:
+  name: Underscore.js
+  homepage: http://documentcloud.github.com/underscore/
+  versions:
+    1.3.1:
+      min: http://documentcloud.github.com/underscore/underscore-min.js
+
+jqueryui:
+  name: jQuery UI
+  homepage: http://jqueryui.com/
+  versions:
+    1.8.16:
+      min: https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js
+
+prototype:
+  name: Prototype
+  homepage: http://prototypejs.org/
+  versions:
+    1.7.0:
+      min: https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js
+
+knockout:
+  name: Knockout
+  homepage: http://knockoutjs.com/
+  versions:
+    2.0.0:
+      min: http://cloud.github.com/downloads/SteveSanderson/knockout/knockout-2.0.0.js
+
+zepto:
+  name: Zepto.js
+  homepage: http://zeptojs.com/
+  versions:
+    0.8.0:
+      min: http://zeptojs.com/javascripts/zepto.min.js
+
+jquery_mobile:
+  name: jQuery Mobile
+  homepage: http://jquerymobile.com/
+  versions:
+    1.0.1:
+      min: http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js
+
+less:
+  name: LESS
+  homepage: http://lesscss.org/
+  versions:
+    1.3.0:
+      min: http://lesscss.googlecode.com/files/less-1.3.0.min.js

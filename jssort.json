@@ -1,0 +1,14 @@
+[
+  "jquery",
+  "less",
+  "prototype",
+  "underscore",
+  "zepto",
+
+  "jqueryui",
+  "jquery_mobile",
+
+  "backbone",
+  "knockout"
+  
+]

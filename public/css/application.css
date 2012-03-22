@@ -1,0 +1,35 @@
+#wrapper{
+  margin-top: 50px;
+}
+.small-grey{
+  font-size: .8em;
+  color: #999;
+}
+#pack_url_box{
+  background-color: #ddd;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 3px #aaa;
+}
+
+#pack_url_box h3{
+  margin-top: 5px;
+}
+
+#pack_url{
+  background-color: #FFFFFF;
+  border-radius: 5px 5px 5px 5px;
+  color: #C3325F;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+}
+
+.btn:active, .btn.active{
+    background-color: #049CDB;
+  }
+
+body{ margin-bottom: 100px; }

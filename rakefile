@@ -1,0 +1,29 @@
+require 'yaml'
+
+BASE_DIR     = (File.expand_path "..", __FILE__) + "/"
+JS_FILES_DIR = BASE_DIR + "jsfiles/"
+JS_LIBS      = YAML.load_file "#{BASE_DIR}jsfiles.yaml"
+
+
+def all_versions 
+  JS_LIBS.each_pair do |lib_id, lib_data|
+    lib_data["versions"].each_pair do |version_id, version_data|
+      yield lib_id, version_id
+    end
+  end
+end
+
+task :check_js_files_exist do
+  all_versions do |lib_id, version_id|
+    filename = "%s-%s.js" % [ lib_id, version_id] 
+    puts "Missing #{filename}" unless File.exists?(JS_FILES_DIR+filename)
+  end
+end
+
+task :get_new_js_files do
+  all_versions do |lib_id, version_id|
+    outfile  = "%s%s-%s.js" % [JS_FILES_DIR, lib_id, version_id]
+    file_url = JS_LIBS[lib_id]["versions"][version_id]["min"]
+    `wget #{file_url} -O #{outfile}` unless File.exists? outfile
+  end
+end

@@ -1,0 +1,94 @@
+!!!
+%html{ lang: "en"}
+  %head
+    %title PackJS
+    %link( rel="stylesheet" type="text/css" href="/css/bootstrap.min.css")
+    %link( rel="stylesheet" type="text/css" href="/css/application.css")
+    %script( type="text/javascript" src="http://packjs.com/jquery")
+    %script( type="text/javascript" src="/js/bootstrap.js")
+    %script( type="text/javascript" src="/js/application.js")
+  %body
+
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          .brand
+            PackJS
+          %ul#tab.nav
+            %li.active
+              %a{href:"#home", data:{toggle: "tab"}}
+                Home
+            %li
+              %a{href:"#about", data:{toggle: "tab"}}
+                About
+            %li
+              %a{href:"#contribute", data:{toggle: "tab"}}
+                Contribute
+
+    #pack_url_box
+      .container
+        %h3 
+          Your Pack URL:
+          %span#pack_url
+
+    #wrapper.container.tab-content
+
+      #home.tab-pane.active
+        .row
+          .span8
+            %table.table.table-bordered.table-striped
+              %thead
+                %tr
+                  %th
+                    Library Name
+                  %th
+                    Versions
+              %tbody
+                - JS_LIBS.each_pair do |lib_id, lib_data|
+                  %tr.lib_row
+                    %td
+                      %h3 
+                        = lib_data["name"]
+                      %span.small-grey
+                        = lib_data["homepage"]
+                    %td
+                      .btn-group.btn-small{data:{toggle:"buttons-checkbox", lib_id: lib_id}}
+                        %button.version.newest.btn.btn-small
+                          Newest
+                        - lib_data["versions"].each_pair do |version_id, version_data|
+                          %button.version.btn.btn-small
+                            = version_id
+          .span4
+            .well
+              %p
+                Choose from the libraries on the left to build your pack.
+              %ol#pack_contents
+              / #pack_url_box
+              /   %h4
+              /     Your Pack Url:
+              /   %code#pack_url
+
+
+      #about.tab-pane
+        .content
+          .hero-unit
+            %h2 PackJS is a Javascript packager.
+            %p It turns this:
+            %ol
+              %li 
+                %code &lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js">&lt;/script>
+              %li 
+                %code  &lt;script type="text/javascript" src="http://documentcloud.github.com/underscore/underscore-min.js">&lt;/script>
+              %li 
+                %code  &lt;script type="text/javascript" src="http://documentcloud.github.com/backbone/backbone-min.js">&lt;/script>
+              %li 
+                %code  &lt;script type="text/javascript" src="http://cloud.github.com/downloads/SteveSanderson/knockout/knockout-2.0.0.js">&lt;/script>
+            %p Into this:
+            %ol
+              %li
+                %code &lt;script type="text/javascript" src="<b>http://packjs.com/jquery+underscore+backbone+knockout</b>">&lt;/script>
+
+      #contribute.tab-pane
+        .content
+          %a{href: "http://github.com"}
+            github
