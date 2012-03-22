@@ -30,3 +30,5 @@ _________________________________________________________________________
   requires ruby 1.9.x
   run `bundle` in the project root.
   must create your own amazon.yaml in a directory named secrets. more on that later.
+  
+  after all that busniss run `rackup` from the project root and check `http://localhost:9292`
