@@ -9,7 +9,7 @@ require 'zlib'
 PACKJS_ENV = ENV["PACKJS_ENV"] || "development"
 
 # aws
-s3Config = YAML.load_file('secrets/amazon.yaml')
+s3Config = YAML.load_file('secrets/amazon.yaml')[PACKJS_ENV]
 AWS_ACCESS_KEY_ID     = s3Config["access_key_id"] 
 AWS_SECRET_ACCESS_KEY = s3Config["secret_access_key"]
 AWS_BUCKET_NAME       = s3Config["bucket_name"]
